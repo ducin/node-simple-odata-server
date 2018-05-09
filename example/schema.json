@@ -1,0 +1,89 @@
+{
+  "type": "array",
+  "minItems": 4000,
+  "maxItems": 5000,
+  "items": {
+    "title": "Title",
+    "type": "object",
+    "properties": {
+      "Id": {
+        "type": "string",
+        "faker": "random.uuid"
+      },
+      "Title": {
+        "type": "string",
+        "faker": "commerce.productName"
+      },
+      "SoftwareVendorId": {
+        "type": "string",
+        "faker": "random.uuid"
+      },
+      "SoftwareVendorName": {
+        "type": "string",
+        "faker": "company.companyName"
+      },
+      "SoftwareProductId": {
+        "type": "string",
+        "faker": "random.uuid"
+      },
+      "SoftwareProductName": {
+        "type": "string",
+        "faker": "commerce.productName"
+      },
+      "Edition": {
+        "oneOf": [
+          {
+            "type": "string",
+            "faker": "commerce.productName"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "Version": {
+        "type": "string",
+        "pattern": "v\\d{2,3}(\\.\\d{2,3}){0,2}"
+      },
+      "Licensable": {
+        "type": "boolean"
+      },
+      "ReleaseDate": {
+        "oneOf": [
+          {
+            "type": "string",
+            "faker": "date.past"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "EndOfLifeDate": {
+        "oneOf": [
+          {
+            "type": "string",
+            "faker": "date.future"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "Id",
+      "Title",
+      "SoftwareVendorId",
+      "SoftwareVendorName",
+      "SoftwareProductId",
+      "SoftwareProductName",
+      "Edition",
+      "Version",
+      "Licensable",
+      "ReleaseDate",
+      "EndOfLifeDate"
+    ]
+  }
+}

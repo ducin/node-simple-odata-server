@@ -1,0 +1,39 @@
+{
+  "type": "array",
+  "minItems": 4000,
+  "maxItems": 5000,
+  "items": {
+    "title": "DSLTitle",
+    "type": "object",
+    "properties": {
+      "Id": {
+        "type": "string",
+        "faker": "random.uuid"
+      },
+      "Title": {
+        "type": "string",
+        "faker": "commerce.productName"
+      },
+      "Version": {
+        "type": "string",
+        "pattern": "v\\d{2,3}(\\.\\d{2,3}){0,2}"
+      },
+      "SoftwareReleaseId": {
+        "type": "string",
+        "faker": "random.uuid"
+      },
+      "CreatedDate": {
+        "type": "string",
+        "faker": "date.past"
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "Id",
+      "Title",
+      "Version",
+      "SoftwareReleaseId",
+      "CreatedDate"
+    ]
+  }
+}
